@@ -1,0 +1,52 @@
+<%- include('includes/head')  %> 
+<%- include("includes/nav") %> 
+
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 my-4 text-center">
+        <h1 class="fs-2">Login e Cadastro de usuario</h1>
+    </div>
+
+    <%- include('includes/messagens'); %> 
+
+    <div class="row">
+        <div class="col ms-3">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Cadastro de usuario</h4>
+                    <p>Se ainda nao possui uma conta preencha o fomulario abaixo:</p>
+                </div>
+                <div class="card-body">
+                    <form action="/register" method="post">
+                        <label for="email" class="form-label">E-mail:</label>
+                        <input type="email" name='email' class="form-control">
+                        <label for="password" class="form-lable">Passaword:</label>
+                        <input type="password" name='password' class="form-control">
+                        <br>
+                        <button type="submit" class="btn btn-dark form-control">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col me-3">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Login do usuario</h4>
+                    <p>Seja bem-vindo de volta!</p>
+                </div>
+                <div class="card-body">
+                    <form action="/login" method="post">
+                        <label for="email" class="form-lable">E-mail:</label>
+                        <input type="email" class="form-control" name="email" >
+                        <label for="password" class="form-lable">Passaword:</label>
+                        <input type="password" class="form-control" name="password">
+                        <br>
+                        <button class="btn btn-dark form-control">Enter</button>
+                    </form>
+                </div>
+    </div>
+</div>
+
+<%- include('includes/footer')  %>

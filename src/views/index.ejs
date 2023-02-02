@@ -1,0 +1,39 @@
+<%- include('includes/head')  %> 
+<%- include("includes/nav") %> 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 my-4 text-center">
+            <h1 class="fs-2">Agendamento</h1>
+            <p>Lista de contatos</p>
+
+            <%- include('includes/messagens'); %> 
+            
+            <div class="table responsive">
+                <% if(contatos.length > 0){ %>
+                    <table class="table">
+                    <% contatos.forEach(contato =>{ %>
+                        <tr>
+                            <td><%=contato.nome%></td>
+                            <td><%=contato.sobrenome%></td>
+                            <td><%=contato.email%></td>
+                            <td><%=contato.telefone%></td>
+                            <td><a class="btn btn-primary" href="/contacts/<%= contato._id %>">Editar</a></td>
+                            <td><a class="btn btn-danger" href="/delete/<%= contato._id %>">Excluir</a></td>
+                        </tr>
+
+                    <% }) %> 
+                </table>
+                <% }else{ %>
+                    <h1>Ainda nao ha contatos exitentes</h1>
+                <% } %>
+                
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/footer')  %>

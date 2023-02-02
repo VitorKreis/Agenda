@@ -1,0 +1,41 @@
+<%- include('includes/head')  %> 
+<%- include("includes/nav") %> 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 my-4 text-center">
+            <h1>Contatos</h1>
+            <%- include('includes/messagens'); %> 
+            <div class="card">
+                <div class="card-header">
+                    <h4>Cadastro de Contatos</h4>
+                    <p>Crie seu contato</p>
+                </div>
+                <div class="card-body">
+                <% if(contato._id){ %>
+                    <form action="/contacts/<%= contato._id %>" method="post">
+                <% }else{ %>
+                    <form action="/newContact" method="post">
+                <% } %> 
+           
+                    <label for="email" class="form-label">Nome:</label>
+                    <input value="<%= contato.nome %>" type="text" name='nome' class="form-control">
+                    <label for="email" class="form-label">Sobrenome:</label>
+                    <input value="<%= contato.sobrenome %>" type="text" name='sobrenome' class="form-control">
+                    <label for="email" class="form-label">E-mail:</label>
+                    <input value="<%= contato.email %>" type="email" name='email' class="form-control">
+                    <label for="email" class="form-label">Telefone:</label>
+                    <input value="<%= contato.telefone %>" type="tel" name='telefone' class="form-control">
+                    <br>
+                    <button type="submit" class="btn btn-dark form-control">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        </div>
+        <div class="col-lg-2"></div>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/footer')  %>
